@@ -23,13 +23,13 @@ if (isTouchDevice()) {
 
 (function () {
   var header = $('.js-header'),
-      items = header.find('.js-header-item'),
-      burger = header.find('.js-header-burger'),
-      wrapper = header.find('.js-header-wrapper');
+    items = header.find('.js-header-item'),
+    burger = header.find('.js-header-burger'),
+    wrapper = header.find('.js-header-wrapper');
   items.each(function () {
     var item = $(this),
-        head = item.find('.js-header-head'),
-        body = item.find('.js-header-body');
+      head = item.find('.js-header-head'),
+      body = item.find('.js-header-body');
     head.on('click', function (e) {
       e.stopPropagation();
 
@@ -56,7 +56,7 @@ if (isTouchDevice()) {
 
 
 var prevArrow = '<button type="button" class="slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" fill="none" viewBox="0 0 14 9"><path fill-rule="evenodd" d="M4.909.265a1 1 0 0 0-1.413.057l-3.231 3.5a1 1 0 0 0 0 1.357l3.231 3.5a1 1 0 0 0 1.47-1.357L3.284 5.5H13a1 1 0 1 0 0-2H3.284l1.682-1.822A1 1 0 0 0 4.909.265z" fill="#777e91"/></svg></button>',
-    nextArrow = '<button type="button" class="slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" fill="none" viewBox="0 0 14 9"><path fill-rule="evenodd" d="M9.091.265a1 1 0 0 1 1.413.057l3.231 3.5a1 1 0 0 1 0 1.357l-3.231 3.5a1 1 0 0 1-1.47-1.357L10.716 5.5H1a1 1 0 1 1 0-2h9.716L9.034 1.678A1 1 0 0 1 9.091.265z" fill="#23262f"/></svg></button>';
+  nextArrow = '<button type="button" class="slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" fill="none" viewBox="0 0 14 9"><path fill-rule="evenodd" d="M9.091.265a1 1 0 0 1 1.413.057l3.231 3.5a1 1 0 0 1 0 1.357l-3.231 3.5a1 1 0 0 1-1.47-1.357L10.716 5.5H1a1 1 0 1 1 0-2h9.716L9.034 1.678A1 1 0 0 1 9.091.265z" fill="#23262f"/></svg></button>';
 $(document).ready(function () {
   // slider main
   $('.js-slider-main').slick({
@@ -175,17 +175,17 @@ $(document).ready(function () {
   if (slider.length) {
     slider.each(function () {
       var _this = $(this),
-          min = _this.data('min'),
-          max = _this.data('max'),
-          start = _this.data('start'),
-          end = _this.data('end'),
-          step = _this.data('step'),
-          tooltips = _this.data('tooltips'),
-          postfix = _this.data('postfix');
+        min = _this.data('min'),
+        max = _this.data('max'),
+        start = _this.data('start'),
+        end = _this.data('end'),
+        step = _this.data('step'),
+        tooltips = _this.data('tooltips'),
+        postfix = _this.data('postfix');
 
       var optionStart = [start],
-          optionConnect = [true, false],
-          optionTooltips = false;
+        optionConnect = [true, false],
+        optionTooltips = false;
 
       if (end) {
         optionStart = [start, end];
@@ -224,7 +224,7 @@ document.documentElement.style.setProperty('--vh', "".concat(vh, "px")); // togg
 
 (function () {
   var switchTheme = $('.js-theme'),
-      body = $('body');
+    body = $('body');
   switchTheme.on('change', function () {
     if (!body.hasClass('dark')) {
       body.addClass('dark');
@@ -243,7 +243,7 @@ $(document).ready(function () {
 
 (function () {
   var head = $('.footer__head'),
-      body = $('.footer__body');
+    body = $('.footer__body');
   head.on('click', function () {
     $(this).toggleClass('active');
     $(this).next().slideToggle();
@@ -255,11 +255,11 @@ $(document).ready(function () {
   var tabs = $('.js-tabs');
   tabs.each(function () {
     var thisTabs = $(this),
-        nav = thisTabs.find('.js-tabs-link'),
-        item = thisTabs.find('.js-tabs-item');
+      nav = thisTabs.find('.js-tabs-link'),
+      item = thisTabs.find('.js-tabs-item');
     nav.on('click', function () {
       var thisNav = $(this),
-          indexNav = thisNav.index();
+        indexNav = thisNav.index();
       nav.removeClass('active');
       thisNav.addClass('active');
       item.hide();
@@ -271,7 +271,7 @@ $(document).ready(function () {
     var option = $('.js-tabs-select .option');
     option.on('click', function () {
       var thisOption = $(this),
-          indexOption = thisOption.index();
+        indexOption = thisOption.index();
       $('.js-tabs-item').hide();
       $('.js-tabs-item').eq(indexOption).fadeIn();
     });
@@ -281,8 +281,8 @@ $(document).ready(function () {
 
 (function () {
   var item = $('.faq__item'),
-      head = item.find('.faq__head'),
-      body = item.find('.faq__body');
+    head = item.find('.faq__head'),
+    body = item.find('.faq__body');
   head.on('click', function () {
     var thisHead = $(this);
     thisHead.parents('.faq__item').toggleClass('active');
@@ -293,7 +293,7 @@ $(document).ready(function () {
 
 (function () {
   var toggle = $('.js-activity-toggle'),
-      filters = $('.js-activity-filters');
+    filters = $('.js-activity-filters');
   toggle.on('click', function () {
     filters.toggleClass('visible');
   });
@@ -304,8 +304,8 @@ $(document).ready(function () {
   var items = $('.js-actions');
   items.each(function () {
     var item = $(this),
-        button = item.find('.js-actions-button'),
-        body = item.find('.js-actions-body');
+      button = item.find('.js-actions-button'),
+      body = item.find('.js-actions-body');
     button.on('click', function (e) {
       e.stopPropagation();
       $('.js-options-share').removeClass('active');
@@ -352,7 +352,7 @@ $(document).ready(function () {
 
 (function () {
   var open = $('.discover__filter'),
-      filters = $('.discover__filters');
+    filters = $('.discover__filters');
   open.on('click', function () {
     open.toggleClass('active');
     filters.slideToggle();
@@ -362,8 +362,8 @@ $(document).ready(function () {
 
 (function () {
   var head = $('.js-profile-head'),
-      load = $('.js-profile-load'),
-      save = $('.js-profile-save');
+    load = $('.js-profile-load'),
+    save = $('.js-profile-save');
   load.on('click', function () {
     head.addClass('active');
   });
@@ -375,8 +375,8 @@ $(document).ready(function () {
 
 (function () {
   var follow = $('.js-user-follow'),
-      share = $('.js-user-share, .js-options-share'),
-      box = $('.js-user-box, .js-options-box');
+    share = $('.js-user-share, .js-options-share'),
+    box = $('.js-user-box, .js-options-box');
   follow.on('click', function () {
     $(this).toggleClass('active');
   });

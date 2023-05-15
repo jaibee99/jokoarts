@@ -5076,6 +5076,12 @@ body.dark .description {
   width: 100%;
 }
 
+@media only screen and (max-width: 767px) {
+  .description__preview img {
+    display: none;
+  }
+}
+
 .subscription {
   position: relative;
 }

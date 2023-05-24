@@ -1,38 +1,50 @@
-document.addEventListener('DOMContentLoaded', function () {
+$(document).ready(function () {
     // Registration form submission
-    document.getElementById('registrationForm').addEventListener('submit', function (e) {
+    $('#registrationForm').submit(function (e) {
         e.preventDefault();
-        var fname = document.getElementById('fname').value;
-        var lname = document.getElementById('lname').value;
-        var username = document.getElementById('username').value;
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
+        var fname = $('#fname').val();
+        var lname = $('#lname').val();
+        var username = $('#username').val();
+        var email = $('#email').val();
+        var password = $('#password').val();
 
-        axios.post('https://jokoarts.herokuapp.com/register', { fname: fname, lname: lname, username: username, email: email, password: password })
-            .then(function (response) {
-                document.getElementById('message').textContent = response.data.message;
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        axios({
+            method: 'post',
+            url: 'https://jokoarts.herokuapp.com/register',
+            data: {
+                fname: fname,
+                lname: lname,
+                username: username,
+                email: email,
+                password: password
+            },
+            headers: { 'Content-Type': 'application/json' }
+        }).then(function (response) {
+            $('#message').text(response.data.message);
+        }).catch(function (error) {
+            console.error(error);
+        });
     });
 
     // Login form submission
-    document.getElementById('loginForm').addEventListener('submit', function (e) {
+    $('#loginForm').submit(function (e) {
         e.preventDefault();
-        var email = document.getElementById('loginEmail').value;
-        var password = document.getElementById('loginPassword').value;
+        var email = $('#loginEmail').val();
+        var password = $('#loginPassword').val();
 
-        axios.post('https://jokoarts.herokuapp.com/login', { email: email, password: password })
-            .then(function (response) {
-                document.getElementById('message').textContent = response.data.message;
-                if (response.data.success) {
-                    // Redirect to a protected page or perform any other actions upon successful login
-                    window.location.href = "../../dashboard.html";
-                }
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        axios({
+            method: 'post',
+            url: 'https://jokoarts.herokuapp.com/login',
+            data: { email: email, password: password },
+            headers: { 'Content-Type': 'application/json' }
+        }).then(function (response) {
+            $('#message').text(response.data.message);
+            if (response.data.success) {
+                // Redirect to a protected page or perform any other actions upon successful login
+                window.location.href = "dashboard.html";
+            }
+        }).catch(function (error) {
+            console.error(error);
+        });
     });
 });

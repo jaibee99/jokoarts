@@ -17,6 +17,9 @@
     <link href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <link rel=" stylesheet" media="all" href="../css/app.css">
     <script src="../js/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/account/account.js"></script>
     <script src="../../code.tidio.co_443/w7epw5fjqcyyve8fxhhgda85putjoixk.js" async></script>
 
 </head>
@@ -37,7 +40,7 @@
                             href="sign-in.html">Login</a></div>
                     <div class="login__wrap">
                         <div class="registration">
-                            <form action="#" method="post">
+                            <form id="registrationForm">
                                 <div class="registration__form">
                                     <!-- <div class="registration__top"> -->
                                     <!-- <h3 class="registration__title h3">Sign up</h3> -->
@@ -59,21 +62,21 @@
                                             <div class="field__label">First Name</div>
                                             <div class="field__wrap">
                                                 <input class="field__input" type="text" name="fname"
-                                                    placeholder="Enter First Name" value="" required>
+                                                    id="fname" placeholder="Enter First Name" value="" required>
                                             </div>
                                         </div>
                                         <div class="field">
                                             <div class="field__label">Last Name</div>
                                             <div class="field__wrap">
                                                 <input class="field__input" type="text" name="lname"
-                                                    placeholder="Enter Last Name" value="" required>
+                                                id="lname" placeholder="Enter Last Name" value="" required>
                                             </div>
                                         </div>
                                         <div class="field field_view">
                                             <div class="field__label">Username</div>
                                             <div class="field__wrap">
                                                 <input class="field__input" type="text" name="username"
-                                                    placeholder="Enter Username" value="" required>
+                                                id="username" placeholder="Enter Username" value="" required>
 
                                             </div>
                                         </div>
@@ -81,14 +84,14 @@
                                             <div class="field__label">Email</div>
                                             <div class="field__wrap">
                                                 <input class="field__input" type="email" name="email"
-                                                    placeholder="Email Address" value="" required>
+                                                id="email" placeholder="Email Address" value="" required>
                                             </div>
                                         </div>
                                         <div class="field field_view">
                                             <div class="field__label">password</div>
                                             <div class="field__wrap">
                                                 <input class="field__input" type="password" name="password"
-                                                    placeholder="Enter Password" required>
+                                                id="password" placeholder="Enter Password" required>
                                                 <button class="field__view">
                                                     <svg class="icon icon-eye">
                                                         <use xlink:href="#icon-eye"></use>
@@ -104,14 +107,12 @@
                                                         Conditions</a></span></span>
                                         </label>
                                     </div>
-                                    <button class="button registration__button" ty style="
-                                       background: rgb(234, 163, 163);
-background: linear-gradient(90deg, rgb(234, 163, 163) 0%, rgb(224, 77, 77) 35%, rgb(233, 19, 19) 100%); font-weight: 800;
-font-size: 19px
-                                        ">Sign up</button>
+                                    <button class="button registration__button" type="submit" style="background: rgb(234, 163, 163);
+                                    background: linear-gradient(90deg, rgb(234, 163, 163) 0%, rgb(224, 77, 77) 35%, rgb(233, 19, 19) 100%);
+                                    font-weight: 800;font-size: 19px">Sign up</button>
                                 </div>
                             </form>
-
+                            <p id="message"></p>
                         </div>
                     </div>
                 </div>
@@ -134,7 +135,7 @@ font-size: 19px
     <script src="../js/app.min.js"></script>
     <script src="../js/charts.html"></script>
     <script src="../js/demo.js"></script>
-    <script src="../../code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="../../cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
     <script src="../../cdn.datatables.net/1.13.2/js/dataTables.bootstrap4.min.js"></script>
     <script src="../../cdn.datatables.net/buttons/2.3.4/js/dataTables.buttons.min.js"></script>
